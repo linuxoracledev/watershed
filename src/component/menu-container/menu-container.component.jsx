@@ -13,33 +13,33 @@ class MenuContainer extends React.Component {
                     title: 'hats',
                     imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
                     id: 1,
-                    linkUrl: 'shop/hats'
+                    linkUrl: 'category/hats'
                 },
                 {
                     title: 'jackets',
                     imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
                     id: 2,
-                    linkUrl: 'shop/jackets'
+                    linkUrl: 'category/jackets'
                 },
                 {
                     title: 'sneakers',
                     imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
                     id: 3,
-                    linkUrl: 'shop/sneakers'
+                    linkUrl: 'category/sneakers'
                 },
                 {
                     title: 'womens',
                     imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
                     size: 'large',
                     id: 4,
-                    linkUrl: 'shop/womens'
+                    linkUrl: 'category/womens'
                 },
                 {
                     title: 'mens',
                     imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
                     size: 'large',
                     id: 5,
-                    linkUrl: 'shop/mens'
+                    linkUrl: 'category/mens'
                 }
             ]
         }
@@ -48,8 +48,8 @@ class MenuContainer extends React.Component {
     render() {
         return (
             <div className="menu-continer">
-                {this.state.menuSection.map(sec => (
-                    <MenuItem key={sec.id} title={sec.title} imgurl ={sec.imageUrl}  size ={sec.size}/>
+                {this.state.menuSection.map(({ id, ...menuItemProps }) => (
+                    <MenuItem key={id} {...menuItemProps} />
                 ))}
 
             </div>
